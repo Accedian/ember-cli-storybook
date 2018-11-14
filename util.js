@@ -109,7 +109,7 @@ function generatePreviewHead(parsedConfig) {
         }
         if(value.src.indexOf('assets/vendor.js') > -1) {
           // make sure we push this before vendor gets loaded to ensure the application does not bind to the window
-          doc.push('<script>runningTests = true;</script>');
+          // doc.push('<script>runningTests = true;</script>');
         }
 
         doc.push(`<${key} ${objectToHTMLAttributes(value)}></${key}>`);
