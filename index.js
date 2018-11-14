@@ -21,7 +21,7 @@ module.exports = {
     const { ignoreTestFiles=true } = storybook;
 
     const distFilePath = path.resolve(process.cwd(), 'dist/index.html');
-    const testFilePath = path.resolve(process.cwd(), 'dist/tests/index.html');
+//     const testFilePath = path.resolve(process.cwd(), 'dist/tests/index.html');
     const previewHeadFilePath = path.resolve(process.cwd(), '.storybook/preview-head.html');
     const envFilePath = path.resolve(process.cwd(), '.env');
 
@@ -29,15 +29,15 @@ module.exports = {
 
     this.ui.writeLine('Generating files needed by Storybook');
 
-    if(fs.existsSync(testFilePath)) {
-      fileContents = fs.readFileSync(testFilePath);
+//     if(fs.existsSync(testFilePath)) {
+//       fileContents = fs.readFileSync(testFilePath);
 
-      this.ui.writeLine('Parsing dist/tests/index.html');
-    } else {
+//       this.ui.writeLine('Parsing dist/tests/index.html');
+//     } else {
       fileContents = fs.readFileSync(distFilePath);
 
       this.ui.writeLine('Parsing dist/index.html');
-    }
+//     }
 
     const parsedConfig = parse(fileContents, ignoreTestFiles);
 
